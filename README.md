@@ -22,7 +22,8 @@ go install github.com/cloudwego/cwgo@latest
 go env #check out GOPATH, and add it to $PATH to enable cwgo in your terminal
 
 # create idl using protobuf
-mkdir user.proto
+cd idl
+touch user.proto
 
 # create user service boilerplate code
 mkdir -p app/user
