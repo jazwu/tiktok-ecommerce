@@ -1,6 +1,9 @@
 version: '3'
 services:
-  mysql:
+    consul:
+      image: 'hashicorp/consul'
+      ports:
+        - 8500:8500  mysql:
     image: 'mysql:latest'
     ports:
       - 3306:3306
