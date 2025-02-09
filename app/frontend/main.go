@@ -35,10 +35,9 @@ func main() {
 	h.GET("/ping", func(c context.Context, ctx *app.RequestContext) {
 		ctx.JSON(consts.StatusOK, utils.H{"ping": "pong"})
 	})
-
 	router.GeneratedRegister(h)
 	h.LoadHTMLGlob("template/*")
-	h.Static("/static", "./static")
+	h.Static("/static", "./")
 
 	h.Spin()
 }
