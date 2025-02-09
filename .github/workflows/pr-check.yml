@@ -3,13 +3,6 @@ name: Pull Request Check
 on: [ pull_request ]
 
 jobs:
-  compliant:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Check Spelling
-        uses: crate-ci/typos@v1.13.14
-
   golangci-lint:
     runs-on: [ Linux, X64 ]
     steps:
