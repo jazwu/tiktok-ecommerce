@@ -21,4 +21,8 @@ jobs:
         uses: golangci/golangci-lint-action@v6
         with:
           version: latest
-          working-directory: .
+
+      - name: Run Golangci Lint Manually
+        run: |
+          cd $(dirname $(find . -name "go.work"))
+          golangci-lint run ./...
