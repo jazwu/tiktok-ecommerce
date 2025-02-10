@@ -15,6 +15,12 @@ jobs:
           # and it works well without the cache of github actions
           # Enable it if we're going to use Github only
           cache: false
+      
+      - name: Debug GitHub Actions Path
+        run: |
+          pwd
+          ls -la
+          cat go.work || echo "No go.work found"
 
       - name: Golangci Lint
         # https://golangci-lint.run/
