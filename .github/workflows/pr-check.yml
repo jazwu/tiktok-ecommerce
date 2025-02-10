@@ -4,7 +4,7 @@ on: [ pull_request ]
 
 jobs:
   golangci-lint:
-    runs-on: [Linux, 64x]
+    runs-on: [ Linux, X64 ]
     steps:
       - uses: actions/checkout@v4
       - name: Set up Go
