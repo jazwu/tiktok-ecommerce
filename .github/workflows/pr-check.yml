@@ -10,7 +10,7 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
-          go-version: stable
+          go-version: ${{ env.GO_VERSION }}
           # for self-hosted, the cache path is shared across projects
           # and it works well without the cache of github actions
           # Enable it if we're going to use Github only
@@ -21,8 +21,3 @@ jobs:
         uses: golangci/golangci-lint-action@v6
         with:
           version: latest
-
-      - name: Run Golangci Lint Manually
-        run: |
-          cd $(dirname $(find . -name "go.work"))
-          golangci-lint run ./...
