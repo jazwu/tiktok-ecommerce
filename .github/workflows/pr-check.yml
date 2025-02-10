@@ -14,10 +14,11 @@ jobs:
           # for self-hosted, the cache path is shared across projects
           # and it works well without the cache of github actions
           # Enable it if we're going to use Github only
-          cache: true
+          cache: false
 
       - name: Golangci Lint
         # https://golangci-lint.run/
         uses: golangci/golangci-lint-action@v6
         with:
           version: latest
+          working-directory: .
